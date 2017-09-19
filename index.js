@@ -67,18 +67,17 @@ function removeFromCart(item) {
       console.log (`${cart}`);
     }
 
-    if (cart[i].hasOwnProperty(item)) {
+    if (!cart[i].hasOwnProperty(item)) {
     console.log (`That item is not in your cart.`);
   }
 }
   return cart;
 }
 
-
 function placeOrder(cardNumber) {
   if (!cardNumber) {
     console.log(`Sorry, we don't have a credit card on file for you.`);
-  } else {
+  } else if (cardNumber) {
     return `Your total cost is $${totalPrice}, which will be charged to the card ${cardNumber}.`;
   }
   cart = [];
