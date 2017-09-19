@@ -74,10 +74,12 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
-  var currentItem = cart[i]
-  var itemName = Object.keys(currentItem)[0]
-  var itemPrice = currentItem[itemName]
-  totalPrice += itemPrice
+  var totalPrice = 0
+  for (let i =0; i < cart.length; i++) {
+    var currentItem = cart[i]
+    var itemName = Object.keys(currentItem)[0]
+    var itemPrice = currentItem[itemName]
+    totalPrice += itemPrice
   if (!cardNumber) {
     console.log(`Sorry, we don't have a credit card on file for you.`);
   } else if (isNaN(cardNumber) === false) {
