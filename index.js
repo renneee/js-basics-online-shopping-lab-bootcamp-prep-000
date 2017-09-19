@@ -67,7 +67,7 @@ function removeFromCart(item) {
       console.log (`${cart}`);
     }
 
-    if (!cart[i].includes(item)) {
+    if (!cart[i].hasOwnProperty(item)) {
     console.log (`That item is not in your cart.`);
   }
 }
